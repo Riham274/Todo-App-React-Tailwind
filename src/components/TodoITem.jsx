@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Button from "./Button";
 
 function TodoItem({ item, deleteItem }) {
   const [isEditing, setIsEditing] = useState(false);
@@ -21,26 +22,20 @@ function TodoItem({ item, deleteItem }) {
 
       <div className="flex gap-2">
         {isEditing ? (
-          <button
-            className="px-3 py-1 bg-blue-500 text-white rounded"
+          //new components
+          <Button
+            text="Save"
             onClick={() => setIsEditing(false)}
-          >
-            Save
-          </button>
+            color="bg-blue-500"
+          />
         ) : (
-          <button
-            className="px-3 py-1 bg-blue-500 text-white rounded"
+          <Button
+            text="Edit"
             onClick={() => setIsEditing(true)}
-          >
-            Edit
-          </button>
+            color="bg-blue-500"
+          />
         )}
-        <button
-          className="px-3 py-1 bg-red-500 text-white rounded"
-          onClick={deleteItem}
-        >
-          Delete
-        </button>
+        <Button text="Delete" onClick={deleteItem} color="bg-red-500" />
       </div>
     </li>
   );

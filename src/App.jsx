@@ -13,12 +13,15 @@ function App() {
     "NextJS",
   ]);
   const [newItem, setNewItem] = useState("");
-
+// how to add new item ?
   const addItem = (e) => {
     e.preventDefault();
-    setItems([...items, newItem]);
+    //setItems([...items, newItem]);
+    setItems(prev => [...prev,newItem] );
+    
   };
-
+  
+// all ways?
   const deleteItem = (index) => {
     const newItems = [...items];
     newItems.splice(index, 1);

@@ -5,6 +5,7 @@ function TodoList({ items, deleteItem }) {
     <ul className="space-y-2">
       {items.map((item, index) => (
         <TodoItem
+        //key?
           key={index}
           item={item}
           deleteItem={() => deleteItem(index)}
